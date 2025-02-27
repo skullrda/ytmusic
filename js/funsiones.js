@@ -2,6 +2,7 @@ const ch_trance = [
 	{ nombre: 'A State of Trance							', descrip: 'A State Of Trance					', url: 'NGsjwNsXE0w' },
 	{ nombre: 'Art of Gandalf Radio 					', descrip: 'Art of Minimal Techno Trip	', url: '04KOpxI25DU' },
 	{ nombre: 'Art of Techno Deep Radio				', descrip: 'Art of Minimal Techno Trip	', url: 'UYOb37KRFqk' },
+	{ nombre: 'Astrix @ Ozora Festival 2023		', descrip: 'Astrix											', url: '1-ccS5614j0' },
 	{ nombre: 'Dark Minimal Techno 1					', descrip: 'Dark Monkey Music					', url: 'i3sD9iUSiaU' },
 	{ nombre: 'Dark Minimal Techno 2					', descrip: 'RTTWLR											', url: 'FOsRAs__6PM' },
 	{ nombre: 'Dark Monkey Music							', descrip: 'Dark Monkey Music					', url: '4cen6pwwCdc' },
@@ -10,8 +11,10 @@ const ch_trance = [
 	{ nombre: 'Melodic Techno & House 2				', descrip: 'Dark Monkey								', url: 'SN7SB4FB8V4' },
 	{ nombre: 'Melodic Techno & House 3				', descrip: 'MOR-FINE										', url: 'PTXbB9Pcs2A' },
 	{ nombre: 'Melodic Techno & House 4				', descrip: 'MOR-FINE										', url: 'O0-1kwDNcMA' },
+	{ nombre: 'Melodic Techno & House 5				', descrip: 'Melodic Techno World				', url: 'Fe7RYxtYLgE' },
 	{ nombre: 'Minimal Techno Party Radio 		', descrip: 'Trippy Cat Music						', url: 'O4MglOOMdGw' },
 	{ nombre: 'Non Stop Corona Party Mix  		', descrip: 'Speernorman								', url: 'yoVJLMFNQB4' },
+	{ nombre: 'Party Music 2025 							', descrip: 'DJ Sun Official						', url: 'yzJNQtZibWs' },
 	{ nombre: 'Remixes & Mashups 1						', descrip: 'Knight EDM									', url: 'W7Yr1fLjt70' },
 	{ nombre: 'Remixes & Mashups 2						', descrip: 'Knight EDM									', url: '2oPnJPDQslg' },
 	{ nombre: 'Techno Radio Non Stop Rave			', descrip: 'Trippy Cat Music						', url: 'pRfWToc8uxQ' },
@@ -20,9 +23,8 @@ const ch_trance = [
 	{ nombre: '️German TECHNO BUNKER   				', descrip: 'Fear N Loathing						', url: 'TD_s2xJ7VUs' },
 	{ nombre: '️Kids Love Minimal Techno 			', descrip: 'Minimal Group							', url: 'L6X6a3KjnCA' },
 	{ nombre: '️Non Stop Techno Rave Radio  		', descrip: 'Minimal Group							', url: '34H1XIjnfKM' },
-	{ nombre: '️Only Bangers Minimal Techno 		', descrip: 'Minimal Group							', url: 'Y8H09NpvEJU' },
-	{ nombre: 'Melodic Techno & House 5				', descrip: 'Melodic Techno World				', url: 'Fe7RYxtYLgE' },
-	{ nombre: 'Party Music 2025 							', descrip: 'DJ Sun Official						', url: 'yzJNQtZibWs' }
+	{ nombre: '️Only Bangers Minimal Techno 		', descrip: 'Minimal Group							', url: 'Y8H09NpvEJU' }
+	
 ];
 
 const ch_80s90s = [
@@ -133,15 +135,15 @@ function mostrarlistas(elementox, const_ch, listax) {
 		const chUrl = sitio.url;
 
 		const listItem = document.createElement('li');
-		listItem.innerHTML = `<a onclick="AbrirPagina('${sitio.url}')">${chNombre}</a>`;
+		listItem.innerHTML = `<a onclick="AbrirVideo('${chUrl}')">${chNombre}</a>`;
 		channelList.appendChild(listItem);
 	});
 	
 	seleccionx(listax);
 }
 
-	mostrarlistas('lista-trance', ch_trance, '#lista-trance li'); 
-	mostrarlistas("lista-80s90s", ch_80s90s, '#lista-80s90s li');
-	mostrarlistas("lista-chillout", ch_chillout, '#lista-chillout li');
-	mostrarlistas("lista-relax", ch_relax, '#lista-relax li');
-	mostrarlistas("lista-pack", ch_pack, '#lista-pack li');
+mostrarlistas('lista-trance', ch_trance, '#lista-trance li'); 
+mostrarlistas("lista-80s90s", ch_80s90s, '#lista-80s90s li');
+mostrarlistas("lista-chillout", ch_chillout, '#lista-chillout li');
+mostrarlistas("lista-relax", ch_relax, '#lista-relax li');
+mostrarlistas("lista-pack", ch_pack, '#lista-pack li');
