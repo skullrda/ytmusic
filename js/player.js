@@ -6,7 +6,7 @@ const overlay = document.getElementById('overlay');
 
 // Función para abrir la ventana flotante Pagina
 function AbrirPagina(urlx) {
-		const pageUrl = 'https://www.youtube.com/embed/' + urlx + '?vq=hd1080?rel=0&autoplay=1&controls=0'
+		const pageUrl = 'https://www.youtube.com/embed/' + urlx + '?vq=hd1080?rel=0&autoplay=1&controls=1'
 		VentanaPagina.style.display = 'block';
 		overlay.style.display = 'block';
 		iframe.src = pageUrl; // Cargar la página en el iframe
