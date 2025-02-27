@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="css/inicio.css">
+	<link rel="stylesheet" href="css/player.css">
+	<script src="https://www.youtube.com/iframe_api"></script>
+
+	<title>Musica Youtube</title>
+		
+</head>
+<body>
+
+	<div class="header">
+		<span class="titulo">Musica en Vivo Youtube</span>
+	</div>
+	
+		<!-- CSS Panel Contenedor -->
+		<div class="panel-container">
+			<!-- listado Trance & Techno -->
+			<div class="css-panel">
+				<h3>Trance & Techno<span class="emoji">&#128250</span></h3>
+				<ul id="lista-trance" class="scrollable-list">
+			</div>
+			<!-- listado Dance Pop 80s 90s -->
+			<div class="css-panel">
+				<h3>Dance Pop 80s 90s<span class="emoji">&#128250</span></h3>
+				<ul id="lista-80s90s" class="scrollable-list">
+			</div>
+			<!-- listado Chillout Deep Soul -->
+			<div class="css-panel">
+				<h3>Chillout Deep Soul<span class="emoji">&#128250</span></h3>
+				<ul id="lista-chillout" class="scrollable-list">
+			</div>
+			<!-- listado Relax -->
+			<div class="css-panel">
+				<h3>Relax<span class="emoji">&#128250</span></h3>
+				<ul id="lista-relax" class="scrollable-list">
+			</div>
+		</div>
+
+		<!-- Fondo oscuro -->
+		<div id="overlay"></div>
+			
+		<!-- Ventana modal -->
+		<div id="videoModal" class="modal">
+				<button id="btcerrar">X</button>
+				<iframe id="frame-pagina" src="" referrerpolicy="no-referrer-when-downgrade" frameborder="0" gesture="media" allowfullscreen=""></iframe>
+				<button id="fullpantalla">Pantalla Completa</button>
+		</div>
+		
+</body>
+	<script src="js/funsiones.js"></script>
+	<script src="js/player.js"></script>
+</html>
