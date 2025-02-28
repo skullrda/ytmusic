@@ -6,6 +6,7 @@ function AbrirVideo(urlx) {
 		document.getElementById('frame-video').src = pageUrl; // Cargar la página en el iframe
 }
 
+// ********************************************************
 // Función para cerrar la ventana flotante
 function CerrarVentanaModal() {
 		document.getElementById('videoModal').style.display = 'none';
@@ -16,7 +17,44 @@ function CerrarVentanaModal() {
 // Evento para cerrar la ventana flotante
 document.getElementById('btcerrar').addEventListener('click', CerrarVentanaModal);
 
-// Usar la función iframeReady
-iframeReady('#frame-pagina', function() {
+// ********************************************************
+function iframeReady(selector, callback) {
+		const iframe = document.querySelector(selector);
+
+		if (!iframe) {
+				console.error(`No se encontró ningún iframe con el selector: ${selector}`);
+				return;
+		}
+
+		if (iframe.contentDocument && iframe.contentDocument.readyState === 'complete') {
+				callback();
+		} else {
+				iframe.addEventListener('load', function() {
+						callback();
+				});
+		}
+}
+
+iframeReady('#frame-video', function() {
 		console.log('El iframe está listo.');
+});
+
+// ********************************************************
+// Crear evento para el boton pantalla completa del video
+// Obtener referencias al iframe y al botón
+const videoIframe = document.getElementById('frame-video');
+const fullscreenButton = document.getElementById('fullpantalla');
+
+// Agregar evento al botón
+fullscreenButton.addEventListener('click', () => {
+    // Verificar si el navegador soporta el modo de pantalla completa
+    if (videoIframe.requestFullscreen) {
+        videoIframe.requestFullscreen();
+    } else if (videoIframe.mozRequestFullScreen) { // Firefox
+        videoIframe.mozRequestFullScreen();
+    } else if (videoIframe.webkitRequestFullscreen) { // Chrome, Safari y Opera
+        videoIframe.webkitRequestFullscreen();
+    } else if (videoIframe.msRequestFullscreen) { // Internet Explorer/Edge
+        videoIframe.msRequestFullscreen();
+    }
 });
