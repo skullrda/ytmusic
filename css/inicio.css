@@ -23,24 +23,34 @@
 
 /* ************************************************************************* */
 
-html {
-  overflow: auto; /* Activa la barra de desplazamiento si el contenido excede la altura de la ventana */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  height: 100vh;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 66, 66, 1));
-	overflow: auto;
+  background: #222;
+
 }
 
-.header {
-  display: flex;
-	flex-wrap: wrap;
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
-  height: 60px;
+.contenedor {
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Define las filas: header, nav, main (expansible), footer */
+  min-height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la pantalla */
+}
+
+.contenedor .header {
+  display: grid;
+  grid-template-rows: auto auto;
+  margin: 0 auto;
+  text-align: center;
   color: white;
+  background-color: rgba(50, 50, 50, 0.6);
+  backdrop-filter: blur(10px);
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.6);
+  width: 100%;
+  padding: 10px 0;    
 }
 
 .titulo {
@@ -49,141 +59,35 @@ body {
 	color: transparent; text-transform: uppercase; text-shadow: 0px 3px 3px rgba(0,0,0,0.6);
 }
 
-.panel-container {
-	display: flex; gap: 20px;
-	flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+.subtitulo {
+	font-size: 20px; font-weight: bold;
+	background: #FFF; -webkit-background-clip: text; -moz-background-clip: text; background-clip: text;
+  color: rgba(240,234,214, 1);
 }
 
-.css-panel {
-	width	: 250px;
-	height: 760px; padding: 10px;
-  background-color: rgba(50, 50, 50, 0.4);
-	box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.6); /* Aplicar sombras */
-  border-radius: 5px;
-}
-
-.css-panel h3 {
-	position: relative;
+h3 {
   display: flex; /* Activa Flexbox */
   justify-content: center; /* Centra horizontalmente */
   align-items: center; /* Centra verticalmente */
-	padding: 2px 4px; margin: 0;
-  font-family: 'Roboto', sans-serif; font-weight: 500; font-size: 16px; text-align: center; color: #F0EAD6;
+	padding: 2px 4px; margin-bottom: 10px;
+  font-family: 'Roboto', sans-serif; font-weight: 500; font-size: 20px; text-align: center; color: #cfbc7b;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0,98,98, 0.5));
   border-radius: 5px; border-bottom: 2px #666 solid;
 }
 
-.emoji {position: relative; font-size: 20px; top: -3px}
-
-.scrollable-list {
-	width: 100%;
-  max-height: 720px;
-  overflow-y: auto;
-  box-sizing: border-box;
-  list-style-type: none;
-  padding: 0;
+.contenedor-listas {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  color: white;
 }
 
-.scrollable-list li {
-	width: 230px;
-	color: #7cc988; font-family: 'Roboto', sans-serif; font-weight: 400; font-size: 14px;
-	white-space: nowrap;
-  background-color: #212427;
-  background: linear-gradient(to right, rgba(255, 0, 0, 0.5), rgba(0,66,66, 0.2));
-  box-shadow: inset 0 0 0 1px rgba(31,31,31,.66), 0 0 1px rgba(0,0,0,.75), 0 0 1px rgba(0,0,0,.75);	/* Aplicar sombras */
-	border-left: 4px solid transparent; /* Borde transparente inicial */
-}
-
-.scrollable-list li a {
-  position: relative;
-  width: 100%;
-  display: block;
-	padding: 8px 0px 8px 6px; 
-	cursor: pointer;
-}
-.scrollable-list li:hover {
-	color:#FFF;
-  background-color: #212427;
-  background: linear-gradient(to right, rgba(2,71,254, 0.5), rgba(0,66,66, 0.3));
-}
-
-.scrollable-list li:last-child {border-bottom: none; /* Elimina el borde inferior del último elemento */}
-
-/* Estilo para el elemento seleccionado */
-.scrollable-list .seleccionado {background: linear-gradient(to right, rgba(255, 0, 0, 0.5), rgba(148,87,235, 0.4)); color:#FFF;border-left: 4px solid #F4CA16;}
-
-/* fix scrollbar Para Firefox */
-.scrollable-list {
-  scrollbar-color: #888 #333;
-  scrollbar-width: thin; /* Grosor de la barra */
-}
-
-/* Para navegadores basados en WebKit (Chrome, Edge, etc.) */
-.scrollable-list::-webkit-scrollbar {
-  width: 8px; /* Ancho de la barra */
-}
-
-.scrollable-list::-webkit-scrollbar-track {
-  background: #; /* Color del track */
-}
-
-.scrollable-list::-webkit-scrollbar-thumb {
-  background: #888; /* Color del pulgar */
-  border-radius: 4px; /* Bordes redondeados */
-}
-
-.scrollable-list::-webkit-scrollbar-thumb:hover {
-  background: #555; /* Cambio de color al pasar el mouse */
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: red; 
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #b30000; 
-}
-
-/* Diseño responsivo */
-@media (max-width: 412px) {
-		.css-panel {
-				width: 90%;
-				height: 50%;
-		}
-		.scrollable-list li {
-		width: 90%;
-		}
-	.titulo {
-		font-size: 20px;
-	}		
-}
-
-@media (max-width: 480px) {
-		.css-panel {
-				width: 90%;
-				height: 50%;
-		}
-		.scrollable-list li {
-		width: 90%;
-		}
-	.titulo {
-		font-size: 20px;
-	}
-}
-
-@media (max-width: 600px) {
-		.css-panel {
-				width: 90%;
-				height: 40%;
-		}
-		.scrollable-list li {
-		width: 90%;
-		}
-	.titulo {
-		font-size: 20px;
-	}
+.footer {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  color: white;
+  background-color: rgba(50, 50, 50, 0.6);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 -5px 5px -5px rgba(0, 0, 0, 0.6);
+  padding: 6px 10px;
 }

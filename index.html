@@ -8,52 +8,127 @@
   <script src="https://www.youtube.com/iframe_api"></script>	
 
 	<link rel="stylesheet" href="css/inicio.css">
+	<link rel="stylesheet" href="css/sidebar.css">
 	<link rel="stylesheet" href="css/player.css">
-
-	<title>Musica Youtube</title>
+	
+	<title>Live Stream</title>
 		
 </head>
 <body>
 
-	<div class="header">
-		<span class="titulo">Musica en Vivo Youtube</span>
-	</div>
-	
-		<!-- CSS Panel Contenedor -->
-		<div class="panel-container">
-			<!-- listado Trance & Techno -->
-			<div class="css-panel">
-				<h3>Trance & Techno<span class="emoji">&#128250</span></h3>
-				<ul id="lista-trance" class="scrollable-list">
-			</div>
-			<!-- listado Dance Pop 80s 90s -->
-			<div class="css-panel">
-				<h3>Dance Pop 80s 90s<span class="emoji">&#128250</span></h3>
-				<ul id="lista-80s90s" class="scrollable-list">
-			</div>
-			<!-- listado Chillout Deep Soul -->
-			<div class="css-panel">
-				<h3>Chillout Deep Soul<span class="emoji">&#128250</span></h3>
-				<ul id="lista-chillout" class="scrollable-list">
-			</div>
-			<!-- listado Relax -->
-			<div class="css-panel">
-				<h3>Relax<span class="emoji">&#128250</span></h3>
-				<ul id="lista-relax" class="scrollable-list">
-			</div>
+<div class="contenedor">
+
+	<header class="header">
+		<span class="titulo">Live Stream Musica & Radios</span>
+		<span class="subtitulo">Listas de Stream en vivo, Porque cada momento en vivo cuenta</span>
+	</header>
+
+	<contenedor-listas class="contenedor-listas">
+		<div class="sidebar">
+			<ul class="menu">
+				<h3>Musica TV publica</h3>
+				<li class="dropdown">
+					<button class="dropdown-btn">Trance & Melodic Techo<span class="left-icon">▼</span></button>
+					<ul class="dropdown-content">
+					</ul>
+				</li>
+				<li class="dropdown">
+					<button class="dropdown-btn">Dance Pop 80s 90s & Retro<span class="left-icon">▼</span></button>
+					<ul class="dropdown-content">
+					</ul>
+				</li>
+				<li class="dropdown">
+					<button class="dropdown-btn">Relax & Meditación<span class="left-icon">▼</span></button>
+					<ul class="dropdown-content">
+					</ul>
+				</li>
+			</ul>
 		</div>
 
-		<!-- Fondo oscuro -->
-		<div id="overlay"></div>
-			
-		<!-- Ventana modal -->
-		<div id="videoModal" class="modal">
-				<button id="btcerrar">X</button>
-				<iframe id="frame-video" src="" referrerpolicy="no-referrer-when-downgrade" frameborder="0" gesture="media" allowfullscreen=""></iframe>
-				<button id="fullpantalla">Pantalla Completa</button>
+		<div class="sidebar">
+			<ul class="menu">
+				<h3>Canales Musica Youtube</h3>
+				<li class="dropdown">
+					<button class="dropdown-btn">Trance & Melodic Techo<span class="left-icon">▼</span></button>
+					<ul id="lista-yt_trance" class="dropdown-content"></ul>
+				</li>
+				<li class="dropdown">
+					<button class="dropdown-btn">Dance Pop 80s 90s & Retro<span class="left-icon">▼</span></button>
+					<ul id="lista-yt_80s90s" class="dropdown-content"></ul>
+				</li>
+				<li class="dropdown">
+					<button class="dropdown-btn">Chillout Deep Soul<span class="left-icon">▼</span></button>
+					<ul id="lista-yt_chillout" class="dropdown-content"></ul>
+				</li>
+				<li class="dropdown">
+					<button class="dropdown-btn">Relax & Meditación<span class="left-icon">▼</span></button>
+					<ul id="lista-yt_relax" class="dropdown-content"></ul>
+				</li>				
+			</ul>
+		</div>		
+
+		<div class="sidebar">
+			<ul class="menu">
+				<h3>Set Video Clips Youtube</h3>
+				<li class="dropdown">
+					<button class="dropdown-btn">Eurodance<span class="left-icon">▼</span></button>
+					<ul id="lista-vd_eurodance" class="dropdown-content">
+					</ul>
+				</li>
+				<li class="dropdown">
+					<button class="dropdown-btn">70s 80s 90s & Retro<span class="left-icon">▼</span></button>
+					<ul id="lista-vd_70s80s90s" class="dropdown-content">
+					</ul>
+				</li>
+				<li class="dropdown">
+					<button class="dropdown-btn">Trance & Melodic Techo<span class="left-icon">▼</span></button>
+					<ul id="lista-vd_trance" class="dropdown-content">
+					</ul>
+				</li>
+			</ul>
 		</div>
+
+		<div class="sidebar">
+			<ul class="menu">
+				<h3>Emisoras de Radios</h3>
+				<li class="dropdown">
+					<button class="dropdown-btn">Trance & Melodic Techo<span class="left-icon">▼</span></button>
+					<ul class="dropdown-content">
+					</ul>
+				</li>
+				<li class="dropdown">
+					<button class="dropdown-btn">Dance Pop 80s 90s & Retro<span class="left-icon">▼</span></button>
+					<ul class="dropdown-content">
+					</ul>
+				</li>
+				<li class="dropdown">
+					<button class="dropdown-btn">Relax & Meditación<span class="left-icon">▼</span></button>
+					<ul class="dropdown-content">
+					</ul>
+				</li>
+			</ul>
+		</div>		
+
+	</contenedor-listas>
+
+	<footer class="footer">
+		Footer
+	</footer>
+
+	<!-- Fondo oscuro -->
+	<div id="overlay"></div>
 		
+	<!-- Ventana modal -->
+	<div id="videoModal" class="modal">
+		<button id="btcerrar">X</button>
+		<iframe id="frame-video" src="" referrerpolicy="no-referrer-when-downgrade" frameborder="0" gesture="media" allowfullscreen=""></iframe>
+		<button id="fullpantalla">Pantalla Completa</button>
+	</div>
+
+</div>	
+
 </body>
 	<script src="js/funsiones.js"></script>
+	<script src="js/sidebar.js"></script>
 	<script src="js/player.js"></script>
 </html>
